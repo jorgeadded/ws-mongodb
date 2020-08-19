@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.jorge.wsmongo.domain.Post;
 import com.jorge.wsmongo.domain.User;
+import com.jorge.wsmongo.dto.AuthorDTO;
 import com.jorge.wsmongo.repository.PostRepository;
 import com.jorge.wsmongo.repository.UserRepository;
 
@@ -38,8 +39,8 @@ public class Instantiation implements CommandLineRunner {
 		userRepository.saveAll(Arrays.asList(maria, alex, bob));
 		
 		
-		Post post1 = new Post(null, sdf.parse("21/03/2018"), "partiu viagem", "vou viajar para são paulo. Abraços",maria);
-		Post post2= new Post(null, sdf.parse("23/03/2018"), "Bom dia ", "são paulo. Abraços",maria);
+		Post post1 = new Post(null, sdf.parse("21/03/2018"), "partiu viagem", "vou viajar para são paulo. Abraços",new AuthorDTO(maria);
+		Post post2= new Post(null, sdf.parse("23/03/2018"), "Bom dia ", "são paulo. Abraços",new AuthorDTO(maria));
 		
 		postRepository.saveAll(Arrays.asList(post1, post2));
 		
